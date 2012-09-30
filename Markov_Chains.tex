@@ -82,6 +82,13 @@ When $Omega$ is discrete, the stochastic process is called a \emph{chain}. For t
 \begin{itemize}
 	\item Discrete
 	\item Continuous
+\end{itemize}\pause
+Applications:
+\begin{itemize}
+\item Biology
+\item Economics
+\item (Queueing Theory)
+\item (Board games)
 \end{itemize}
 }
 
@@ -122,7 +129,7 @@ $P(n)$ is a stochastic matrix:
 }
 
 \frame{\frametitle{Homogeneous Markov Chains}
-In a Homogeneous Markov Chain the transition rates do not depend on the amount of time that has passed:
+In a Homogeneous Markov Chain the transition probabilities do not depend on the amount of time that has passed:
 $$P(k)=P(0)\text{ for all }k$$
 This is what we consider in this course.
 }
@@ -205,14 +212,115 @@ $$\begin{cases}
 }
 
 \section{Continuous Markov Chains}
-\frame{\frametitle{Continuous Markov Chains}}
+\frame{\frametitle{Continuous Markov Chains}
+}
 
-\frame{\frametitle{Transition Matrix}}
+\frame{\frametitle{Transition Rates}
+In a discrete time Markov chain:
+\begin{itemize}
+	\item  $T=\{1,2,3,\dots\}$
+	\item Interactions between states given by transition probabilities
+\end{itemize}
+In a continuous time Markov chain:
+\begin{itemize}
+	\item $T=\mathbb{R}_{\geq 0}$
+	\item Interactions between states given by \emph{rates at which transitions happen}.
+\end{itemize}
+}
 
-\frame{\frametitle{Exponent of a matrix}}
+\frame{\frametitle{Transition Rate Matrix}
 
-\frame{\frametitle{Steady state equation}}
+$$Q(t)=
+\begin{pmatrix}
+q_{00}(n)&q_{01}(n)&q_{02}(n)&\dots&q_{0j}(n)&\dots\\
+q_{20}(n)&q_{11}(n)&q_{12}(n)&\dots&q_{1j}(n)&\dots\\
+q_{20}(n)&q_{21}(n)&q_{22}(n)&\dots&q_{2j}(n)&\dots\\
+\vdots&\vdots&\vdots&\vdots&\vdots&\vdots\\
+q_{i0}(n)&q_{i1}(n)&q_{i2}(n)&\dots&q_{ij}(n)&\dots\\
+\vdots&\vdots&\vdots&\vdots&\vdots&\vdots
+\end{pmatrix}
+$$
+$Q(t)$ is a transition rate matrix:
+\begin{itemize}
+	\item $q_{ii}(t)=\sum_{j\ne i}q_{ij}(t)$ for all $i\in\Omega$
+	\item $p_{ij}(n)\geq 0$ for all $i\ne j\in\Omega$
+\end{itemize}
+}
 
-\frame{\frametitle{Equivalence of Continuous and Discrete Markov Chains}}
+\frame{\frametitle{Homogeneous Markov Chains}
+In a Homogeneous Markov Chain the transition rates do not depend on the amount of time that has passed:
+$$Q(t)=Q(0)\text{ for all }t$$
+This is what we consider in this course.
+}
+\frame{\frametitle{Example}
+The following continuous Markov chain:
+\begin{center}
+\includegraphics[width=6cm]{Continuous_markov_chain.pdf}
+\end{center}
+Has transition rate matrix:
+$$Q=
+\begin{pmatrix}
+-3 & 1 & 0 & 2 \\
+1 & -5 & 4 & 0 \\
+1 & 3 & -4 & 0 \\
+0 & 0 & 1 & -1
+\end{pmatrix}
+$$
+}
+
+
+\frame{\frametitle{Transient and Steady State Distribution}
+\begin{itemize}
+\item We have the following expression for the transient distribution:
+$${d\pi(t)\over dt}=\pi(t)Q$$
+thus:
+$$\pi(t)=\pi(0)e^{Qt}=\pi(0)\left(\mathbb{I}+\sum_{k=1}^{\infty}{Q^kt^k\over k!}\right)$$
+\item The steady state distribution (if it exists) may be obtained by solving the following equation:
+$$\pi Q=0$$
+\end{itemize}
+}
+
+\frame{\frametitle{Example}
+\only<1>{$$\pi(0)=(1,0,0,0)$$\begin{center}\includegraphics[width=10cm]{continuous_probabilities-1000.pdf}\end{center}}
+\only<2>{$$\pi(0)=(0,1,0,0)$$\begin{center}\includegraphics[width=10cm]{continuous_probabilities-0100.pdf}\end{center}}
+\only<3>{$$\pi(0)=(0,0,1,0)$$\begin{center}\includegraphics[width=10cm]{continuous_probabilities-0010.pdf}\end{center}}
+\only<4>{$$\pi(0)=(0,0,0,1)$$\begin{center}\includegraphics[width=10cm]{continuous_probabilities-0001.pdf}\end{center}}
+}
+
+\frame{\frametitle{Weather Example}
+$$\pi Q=0\Rightarrow\begin{cases}
+-3\pi_1+\pi_2+0\pi_3+2\pi_4=0\\
+1\pi_1-5\pi_2+4\pi_3+0\pi_4=0\\
+1\pi_1+3\pi_2-4\pi_3+0\pi_4=0\\
+0\pi_1+0\pi_2+\pi_3-\pi_4=0\\
+\end{cases}$$
+Solving this gives:
+$$\begin{cases}
+\pi_1=c\\
+\pi_2={5\over 4}c\\
+\pi_3={7\over 4}c\\
+\pi_4=2c
+\end{cases}$$
+For some $c$. Recalling that $\pi_1+\pi_2+\pi_3+\pi_4=1$ gives:
+$$\begin{cases}
+\pi_1={1\over 6}\approx .17\\
+\pi_2={5\over 24}\approx.21\\
+\pi_3={7\over 24}\approx.29\\
+\pi_4={1\over 3}\approx.33\\
+\end{cases}$$
+}
+
+\frame{\frametitle{Equivalence of Continuous and Discrete Markov Chains}
+There is an equivalence between Continuous and Discrete Markov Chains:
+\begin{itemize}
+\item If $\pi P=\pi$ then:
+$$\pi (P-\mathbb{I})=0$$
+$(P-\mathbb{I})$ has all the properties of a transition rate matrix (check this)
+\item If $\pi Q=0$ then:
+$$\pi (Q\Delta t+\mathbb{I})=\pi$$
+If we take $\Delta t$ to be \emph{sufficiently} small (so that the probability of 2 transitions occurring in 1 time period is negligible) then $(Q\Delta t+\mathbb{I})$ is a stochastic matrix corresponding to the discretized Markov chain. 1 possibility is to take:
+$$\Delta t\leq {1\over \max_i |q_{ii}|}$$
+\end{itemize}
+}
 
 \end{document}
