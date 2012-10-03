@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+
+%packages
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathdots}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[dvips]{color}
+\usepackage{fancyhdr}
+\usepackage{pstricks}
+\usepackage{pst-node}
+\pagenumbering{arabic}
+\usepackage{hyperref}
+\usepackage{lscape}
+%Margins etc...
+\setlength{\textheight}{240mm}
+\setlength{\topmargin}{-17mm} \setlength{\oddsidemargin}{-4mm}
+\setlength{\textwidth}{166mm} \setlength{\parindent}{0mm}
+\setlength{\marginparsep}{9mm} \setlength{\parskip}{3mm}
+
+\begin{document}
+\begin{center}
+\Huge{Markov Chains Exercise Sheet}\\
+\date{\tiny{Last updated: \today.}}
+\end{center}
+
+\begin{enumerate}
+\item Assume that a student can be in 1 of 4 states:
+\begin{itemize}
+	\item Rich
+	\item Average
+	\item Poor
+	\item In Debt
+\end{itemize}
+Assume the following transition probabilities:
+
+\begin{itemize}
+	\item If a student is Rich, in the next time step the student will be:
+	\begin{itemize}
+		\item Average: .75
+		\item Poor: .2
+		\item In Debt: .05
+	\end{itemize}
+	\item If a student is Average, in the next time step the student will be:
+	\begin{itemize}
+		\item Rich: .05
+		\item Average: .2
+		\item In Debt: .45
+	\end{itemize}
+	\item If a student is Poor, in the next time step the student will be:
+	\begin{itemize}
+		\item Average: .4
+		\item Poor: .3
+		\item In Debt: .2
+	\end{itemize}
+	\item If a student is In Debt, in the next time step the student will be:
+	\begin{itemize}
+		\item Average: .15
+		\item Poor: .3
+		\item In Debt: .55
+	\end{itemize}
+\end{itemize}
+\begin{enumerate}
+\item Draw the corresponding Markov chain and obtain it's stochastic matrix.
+\item Let us assume that a student starts their studies as ``Average''. What will be the probability of them being ``Rich'' after 1,2,3 time steps?
+\item What is the steady state probability vector associated with this Markov chain?
+\end{enumerate}
+\item Consider the following matrices, are they stochastic matrices:
+
+For the matrices that are stochastic matrices, obtain the steady state probabilities (if they exist, if not, explain why).
+\end{enumerate}
+
+\end{document}
