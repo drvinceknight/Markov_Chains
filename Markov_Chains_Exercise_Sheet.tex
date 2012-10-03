@@ -62,13 +62,64 @@ Assume the following transition probabilities:
 	\end{itemize}
 \end{itemize}
 \begin{enumerate}
-\item Draw the corresponding Markov chain and obtain it's stochastic matrix.
-\item Let us assume that a student starts their studies as ``Average''. What will be the probability of them being ``Rich'' after 1,2,3 time steps?
-\item What is the steady state probability vector associated with this Markov chain?
+	\item Draw the corresponding Markov chain and obtain it's stochastic matrix.
+	\item Let us assume that a student starts their studies as ``Average''. What will be the probability of them being ``Rich'' after 1,2,3 time steps?
+	\item What is the steady state probability vector associated with this Markov chain?
 \end{enumerate}
 \item Consider the following matrices, are they stochastic matrices:
 
-For the matrices that are stochastic matrices, obtain the steady state probabilities (if they exist, if not, explain why).
+For the matrices that are stochastic matrices, draw the associated Markov Chain and obtain the steady state probabilities (if they exist, if not, explain why).
+
+
+$$\begin{array}{cccc}
+\begin{pmatrix}
+0&1\\
+0&1\\
+\end{pmatrix}
+&
+\begin{pmatrix}
+.5&.25&.25\\
+1&0&0\\
+0&.23&.77\\
+.8&.1&.1
+\end{pmatrix}&
+\begin{pmatrix}
+{1\over n}&{n-1\over n}\\
+{n-1\over n}&{1\over n}\\
+\end{pmatrix}
+&
+\begin{pmatrix}
+.2&.3&.5\\
+.1&.1&.8\\
+.7&.1&.2
+\end{pmatrix}\\
+\text{(a)}&\text{(b)}& \text{(c)}&\text{(d)}\\
+\begin{pmatrix}
+.2&.3&.1&.4\\
+0&.3&.7&0\\
+.5&.2&.1&.2\\
+.1&0&0&.9
+\end{pmatrix}&
+\begin{pmatrix}
+.2&.3&.5\\
+.3&-.3&1\\
+.2&.2&.6
+\end{pmatrix}
+&
+\begin{pmatrix}
+.5&.5&0&0\\
+0&.5&.5&0\\
+0&0&.5&.5\\
+.5&0&0&.5\\
+\end{pmatrix}
+&
+\begin{pmatrix}
+\alpha&\beta\\
+\omega&\gamma
+\end{pmatrix}
+\\
+\text{(e)}&\text{(f)}& \text{(g)}&\text{(h)}\\
+\end{array}$$
 \end{enumerate}
 
 \end{document}
