@@ -6,7 +6,6 @@
 \usepackage{mathdots}
 \usepackage{amsthm}
 \usepackage{amssymb}
-\usepackage[dvips]{color}
 \usepackage{fancyhdr}
 \usepackage{pstricks}
 \usepackage{pst-node}
@@ -63,8 +62,55 @@ Assume the following transition probabilities:
 \end{itemize}Model the above as a discrete Markov chain and:
 \begin{enumerate}
 	\item Draw the corresponding Markov chain and obtain it's stochastic matrix.
+
+\begin{center}
+\includegraphics[width=8cm]{Markov_Chains_Ex_1.pdf}
+\end{center}
+
+$$
+P=\begin{pmatrix}
+0&.75&.2&.05\\
+.05&.2&.3&.45\\
+.1&.4&.3&.2\\
+0&.15&.3&.55
+\end{pmatrix}
+$$
+
 	\item Let us assume that a student starts their studies as ``Average''. What will be the probability of them being ``Rich'' after 1,2,3 time steps?
+
+$$\pi^{(0)}=(0,1,0,0)$$
+
+
+$$\pi^{(1)}=\pi^{(0)}P=(.05,.2,.3,.45)$$
+After 1 time step: 5\% chance.
+$$\pi^{(2)}=\pi^{(0)}P^2=(.04,.265,.295,.4)$$
+After 2 time steps: 4\% chance.
+$$\pi^{(3)}=\pi^{(0)}P^3=(.04275,.211,.296,.4025)$$
+After 1 time step: 4.275\% chance.
+
 	\item What is the steady state probability vector associated with this Markov chain?
+
+The linear system:
+
+$$
+\begin{cases}
+.05\pi_A+.1\pi_P&=\pi_R\\
+.75\pi_R+.2\pi_A+.4\pi_P+.15\pi_D&=\pi_A\\
+.2\pi_R+.3\pi_A+.3\pi_P+.3\pi_D&=\pi_P\\
+.05\pi_R+.45\pi_A+.2\pi_P+.55\pi_D&=\pi_D\\
+\pi_R+\pi_A+\pi_P+\pi_D=1
+\end{cases}$$
+
+has solution:
+$$
+\begin{cases}
+\pi_R={53\over 1241}\\
+\pi_A={326\over 1241}\\
+\pi_P={367\over 1241}\\
+\pi_D={495\over 1241}\\
+\end{cases}$$
+
+
 \end{enumerate}
 \item Consider the following matrices. For the matrices that are stochastic matrices, draw the associated Markov Chain and obtain the steady state probabilities (if they exist, if not, explain why).
 
