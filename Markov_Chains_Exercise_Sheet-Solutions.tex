@@ -165,6 +165,69 @@ $$\begin{array}{cccc}
 \text{(e)}&\text{(f)}& \text{(g)}&\text{(h)}\\
 \end{array}$$
 
+\begin{enumerate}
+\item
+\begin{center}
+\includegraphics[width=8cm]{Markov_Chains_Ex_2-a.pdf}
+\end{center}
+$$\pi=(0,1)$$
+
+\item Not a square matrix.
+\item
+For $0<n$:
+\begin{center}
+\includegraphics[width=8cm]{Markov_Chains_Ex_2-c.pdf}
+\end{center}
+$$\pi=(.5,.5)$$
+\item
+\begin{center}
+\includegraphics[width=8cm]{Markov_Chains_Ex_2-d.pdf}
+\end{center}
+$$\begin{cases}
+.2\pi_1+.1\pi_2+.7\pi_3&=\pi_1\\
+.3\pi_1+.1\pi_2+.1\pi_3&=\pi_2\\
+.5\pi_1+.8\pi_2+.2\pi_3&=\pi_3\\
+\pi_1+\pi_2+\pi_3&=1
+\end{cases}$$
+gives:
+$$\pi=\left({32\over 81},{29\over 162},{23\over 54}\right)$$
+
+\item
+\begin{center}
+\includegraphics[width=8cm]{Markov_Chains_Ex_2-e.pdf}
+\end{center}
+$$
+\begin{cases}
+.2\pi_1+.5\pi_2+.1\pi_4&=\pi_1\\
+.3\pi_1+.3\pi_2+.2\pi_3&=\pi_2\\
+.1\pi_1+.7\pi_2+.1\pi_3&=\pi_3\\
+.4\pi_1+.2\pi_3+.9\pi_4&=\pi_4\\
+\pi_1+\pi_2+\pi_3+\pi_4&=1
+\end{cases}$$
+
+has solution:
+$$
+\pi=\left({49\over 358},{29\over 358},{14\over 179},{126\over 179}\right)
+$$
+
+
+\item $P_{22}<0$
+\item
+
+\begin{center}
+\includegraphics[width=8cm]{Markov_Chains_Ex_2-g.pdf}
+\end{center}
+
+Immediate to see that:
+
+$$\pi=(.25,.25,.25,.25)$$
+
+\item
+
+Only if $\beta=1-\alpha>0$ and $\omega=1-\gamma>0$.
+
+\end{enumerate}
+
 \item Consider the following (incomplete) transition matrix:
 
 $$
@@ -177,8 +240,32 @@ $$
 $$
 \begin{enumerate}
 	\item Fill in the missing values in the transition matrix.
+$$
+\begin{pmatrix}
+-4&2&1.5&.5\\
+1&-5&1&3\\
+5&2&-8&1\\
+1&0&1&-2\\
+\end{pmatrix}
+$$
 	\item Draw the Markov chain.
+
+\begin{center}
+\includegraphics[width=8cm]{Markov_Chains_Ex_3.pdf}
+\end{center}
+
 	\item Obtain the steady state probabilities.
+$$ \begin{cases}
+-4\pi_1+\pi_2+5\pi_3+\pi_4&=0\\
+2\pi_1-5\pi_2+2\pi_3&=0\\
+1.5\pi_1+\pi_2-8\pi_3+\pi_4&=0\\
+.5\pi_1+3\pi_2+\pi_3-2\pi_4&=0\\
+\pi_1+\pi_2+\pi_3+\pi_4&=1
+\end{cases}$$
+has solution:
+
+$$\pi=\left({13\over 43},{37\over 215},{11\over 86},{171\over 430}\right)$$
+
 \end{enumerate}
 
 \item Consider the following matrices. For the matrices that are transition rate matrices, draw the associated Markov Chain and obtain the steady state probabilities (if they exist, if not, explain why).
@@ -234,22 +321,137 @@ b&-(a+b)&a\\
 \text{(e)}&\text{(f)}& \text{(g)}&\text{(h)}\\
 \end{array}$$
 
+\begin{enumerate}
+\item $P_{22}>0$
+\item Not a square matrix.
+\item
+\begin{center}
+\includegraphics[width=8cm]{Markov_Chains_Ex_4-c.pdf}
+\end{center}
+$$\pi=\left({1\over3},{1\over3},{1\over3}\right)$$
 
+
+\item
+\begin{center}
+\includegraphics[width=8cm]{Markov_Chains_Ex_4-d.pdf}
+\end{center}
+$$ \begin{cases}
+-a\pi_1+a\pi_2&=0\Rightarrow\pi_1=\pi_2\\
+b\pi_1-(a+b)\pi_2+a\pi_3&=0\Rightarrow\pi_2=\pi_3\\
+b\pi_2-b\pi_3&=0\Rightarrow\pi_2=\pi_3\\
+\pi_1+\pi_2+\pi_3=1
+\end{cases}
+$$
+thus:
+$$\pi=\left({1\over3},{1\over3},{1\over3}\right)$$
+
+\item
+
+\begin{center}
+\includegraphics[width=8cm]{Markov_Chains_Ex_4-e.pdf}
+\end{center}
+
+
+$$ \begin{cases}
+-\pi_1+\pi_3+2\pi_4&=0\\
+\pi_1-4\pi_2&=0\\
+2\pi_2-2\pi_3&=0\\
+2\pi_2+\pi_3-2\pi_4&=0\\
+\pi_1+\pi_2+\pi_3+\pi_4&=1
+\end{cases}$$
+gives:
+$$\pi=\left({8\over15},{2\over15},{2\over15},{3\over15}\right)$$
+
+\item
+
+\begin{center}
+\includegraphics[width=8cm]{Markov_Chains_Ex_4-f.pdf}
+\end{center}
+
+$$\pi=(1,0,0)$$
+
+\item
+\begin{center}
+\includegraphics[width=8cm]{Markov_Chains_Ex_4-g.pdf}
+\end{center}
+
+$$\pi=\left({1\over4},{1\over 4},{1\over 4},{1\over 4}\right)$$
+
+\item Only if $-\alpha=\beta\geq0$ and $-\gamma=\omega\geq0$
+
+
+\begin{center}
+\includegraphics[width=8cm]{Markov_Chains_Ex_4-h.pdf}
+\end{center}
+
+$$\begin{cases}
+-\beta\pi_1+\omega\pi_2&=0\\
+\pi_1+\pi_2=1
+\end{cases}$$
+Gives:
+$$\pi=\left({\omega\over \beta+\omega},{\beta\over\beta+\omega}\right)$$
+if $\beta+\omega=0$ then no steady state exists.
+
+\end{enumerate}
 \item Consider the following continuous Markov chain.
 
-$$\begin{pmatrix}
+\begin{center}
+\includegraphics[width=8cm]{Markov_Chains_Ex_5.pdf}
+\end{center}
+
+
+
+\begin{enumerate}
+	\item Obtain the transition rate matrix.
+$$Q=\begin{pmatrix}
 -1&0&1&0\\
 3&-5&1&1\\
 2&0&-2&0\\
 1&2&0&-3\\
 \end{pmatrix}$$
 
-\begin{enumerate}
-	\item Draw the corresponding Markov chain.
 	\item Obtain the steady state probabilities for this Markov chain.
+$$
+\begin{cases}
+-\pi_1+3\pi_2+2\pi_3+\pi_4&=0\\
+-5\pi_2+2\pi_4&=0\\
+\pi_1+\pi_2-2\pi_3&=0\\
+\pi_2-3\pi_4&=0
+\end{cases}
+$$
+has solution:
+$$\left({2\over3},0,{1\over3},0\right)$$
+
 	\item Obtain the corresponding discrete time Markov chain.
+
+Taking $\Delta t={1\over 5}$ gives:
+
+$$P=\begin{pmatrix}
+{4\over5}&0&{1\over5}&0\\
+{3\over5}&0&{1\over5}&{1\over5}\\
+{2\over 5}&0&{3\over5}&0\\
+{1\over 5}&{2\over5}&0&{2\over 5}\\
+\end{pmatrix}$$
+
+
 	\item Draw the corresponding Markov chain.
+
+\begin{center}
+\includegraphics[width=8cm]{Markov_Chains_Ex_5-d.pdf}
+\end{center}
+
 	\item Obtain the steady state probabilities for the discretized Markov chain.
+$$
+\begin{cases}
+{4\over5}\pi_1+{3\over5}\pi_2+{2\over5}\pi_3+{1\over5}\pi_4&=\pi_1\\
+{2\over5}\pi_4&=\pi_2\\
+{1\over5}\pi_1+{1\over5}\pi_2+{3\over5}\pi_3&=\pi_3\\
+{1\over5}\pi_2+{2\over5}\pi_4&=\pi_4\\
+\pi_1+\pi_2+\pi_3+\pi_4&=1
+\end{cases}
+$$
+has solution:
+$$\left({2\over3},0,{1\over3},0\right)$$
 \end{enumerate}
 
 \end{enumerate}
