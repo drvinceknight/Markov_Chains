@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+
+%packages
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathdots}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{pstricks}
+\usepackage{pst-node}
+\pagenumbering{arabic}
+\usepackage{hyperref}
+\usepackage{lscape}
+%Margins etc...
+\setlength{\textheight}{240mm}
+\setlength{\topmargin}{-17mm} \setlength{\oddsidemargin}{-4mm}
+\setlength{\textwidth}{166mm} \setlength{\parindent}{0mm}
+\setlength{\marginparsep}{9mm} \setlength{\parskip}{3mm}
+
+\begin{document}
+\begin{center}
+\Huge{Markov Chains Sage Sheet}\\
+\tiny{Last updated: \today.}
+\end{center}
+
+\begin{enumerate}
+\item Discrete Markov Chains
+Navigate to the Sage code snippet at: \url{http://interact.sagemath.org/node/39}.
+\begin{enumerate}
+\item Using the default inputs, what is the steady state distribution associated with this Markov chain?
+\item How long does it seem to take to arrive at that state (try and use Sage to verify this)?
+\item Change the input parameters to:
+$$A=\begin{pmatrix}
+.5&0&.5\\
+.5&.5&0\\
+0&.5&.5\\
+\end{pmatrix}\text{ and }\pi^{(0)}=(12,0,0)$$
+\end{enumerate}
+What is the steady state distribution for this Markov chain.
+\end{enumerate}
+
+\end{document}
