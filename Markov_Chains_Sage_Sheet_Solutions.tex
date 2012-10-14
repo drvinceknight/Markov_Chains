@@ -20,7 +20,7 @@
 
 \begin{document}
 \begin{center}
-\Huge{Markov Chains Sage Sheet}\\
+\Huge{Markov Chains Sage Sheet Solutions}\\
 \tiny{Last updated: \today.}
 \end{center}
 
@@ -29,10 +29,46 @@
 Navigate to the Sage code snippet at: \url{http://interact.sagemath.org/node/39} and perhaps start a new Sage worksheet so that you can try a few of your own Sage commands.
 
 WARNING: The convention used in this code snippet is different to the notes. The columns sums add to 1 not the row sums. Keep this in mind as you work through it.
+ANSWER:\\(The solutions here make use of the convention in the notes)
 
 \begin{enumerate}
 \item Using the default inputs, what is the steady state distribution associated with this Markov chain (try and use the Sage ``solve" command to verify this)?
+
+ANSWER:\\
+The steady state distribution is given by:
+
+$$\pi=\left({75\over 2},{75\over 2},25\right)$$
+
+We can obtain this using the following Sage code:
+
+\begin{verbatim}
+var("pi1,pi2,pi3")
+solve([.8*pi1+.2*pi2==pi1,.1*pi1+.7*pi2+.3*pi3==pi2,
+       .1*pi1+.1*pi2+.7*pi3==pi3,pi1+pi2+pi3==50+30+20],[pi1,pi2,pi3])
+\end{verbatim}
+
+we can make things a bit more ``generic'' as follows:
+\begin{verbatim}
+A=matrix([[.8,.1,.1],[.2,.7,.1],[0,.3,.7]])
+var("pi1,pi2,pi3")
+solve([A[0,0]*pi1+A[1,0]*pi2+A[2,0]*pi3==pi1,
+       A[0,1]*pi1+A[1,1]*pi2+A[2,1]*pi3==pi2,
+       A[0,2]*pi1+A[1,2]*pi2+A[2,2]*pi3==pi3,
+       pi1+pi2+pi3==50+30+20],[pi1,pi2,pi3])
+\end{verbatim}
+
 \item How long does it seem to take to arrive at that state (try and use Sage to verify this)?
+
+ANSWER:\\
+It seems to take about 20 time steps. We can check this by trying the following code with various values of $n$:
+
+\begin{verbatim}
+n=11
+A=matrix([[.8,.1,.1],[.2,.7,.1],[0,.3,.7]])
+pi_0=vector([50,30,20])
+pi_0*A^n
+\end{verbatim}
+
 \end{enumerate}
 \item Continuous Markov Chains\\
 The evolution of a Continuous Markov Chain obeys the following differential equation:
@@ -45,6 +81,10 @@ $$
 e^{M}=\mathbb{I}+\sum_{k=1}^{\infty}{M^k\over k!}
 $$
 Navigate to the Sage code snippet at \url{http://interact.sagemath.org/node/71} and experiment with the code to see how good this approach is.
+
+ANSWER:\\
+We see that the default inputs require 21 terms to give a good approximation (to 4 decimal places). Playing around with different inputs should give different results.
+
 \begin{enumerate}
 \item Consider the following Markov Chain:
 $$Q=\begin{pmatrix}
@@ -54,6 +94,23 @@ $$Q=\begin{pmatrix}
 0&0&4&-4
 \end{pmatrix}$$
 \item Using the Sage ``solve" command to obtain the steady state probabilities for this Markov Chain.
+
+ANSWER:\\
+The steady state probabilities are given by:
+
+$$\pi=(.3657,.2743,.2057,.1543)$$
+
+This can be obtained using the following code:
+
+\begin{verbatim}
+Q=matrix([[-3,3,0,0],[4,-7,3,0],[0,4,-7,3],[0,0,4,-4]])
+var("pi1,pi2,pi3,pi4")
+solve([Q[0,0]*pi1+Q[1,0]*pi2+Q[2,0]*pi3+Q[3,0]*pi4==0,
+       Q[0,1]*pi1+Q[1,1]*pi2+Q[2,1]*pi3+Q[3,1]*pi4==0,
+       Q[0,2]*pi1+Q[1,2]*pi2+Q[2,2]*pi3+Q[3,2]*pi4==0,
+       Q[0,3]*pi1+Q[1,3]*pi2+Q[2,3]*pi3+Q[3,3]*pi4==0,
+       pi1+pi2+pi3+pi4==1],[pi1,pi2,pi3,pi4])
+\end{verbatim}
 \end{enumerate}
 \end{enumerate}
 
