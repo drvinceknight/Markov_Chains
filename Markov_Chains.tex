@@ -234,11 +234,11 @@ In a continuous time Markov chain:
 
 $$Q(t)=
 \begin{pmatrix}
-q_{00}(n)&q_{01}(n)&q_{02}(n)&\dots&q_{0j}(n)&\dots\\
-q_{20}(n)&q_{11}(n)&q_{12}(n)&\dots&q_{1j}(n)&\dots\\
-q_{20}(n)&q_{21}(n)&q_{22}(n)&\dots&q_{2j}(n)&\dots\\
+q_{00}(t)&q_{01}(t)&q_{02}(t)&\dots&q_{0j}(t)&\dots\\
+q_{10}(t)&q_{11}(t)&q_{12}(t)&\dots&q_{1j}(t)&\dots\\
+q_{20}(t)&q_{21}(t)&q_{22}(t)&\dots&q_{2j}(t)&\dots\\
 \vdots&\vdots&\vdots&\vdots&\vdots&\vdots\\
-q_{i0}(n)&q_{i1}(n)&q_{i2}(n)&\dots&q_{ij}(n)&\dots\\
+q_{i0}(t)&q_{i1}(t)&q_{i2}(t)&\dots&q_{ij}(t)&\dots\\
 \vdots&\vdots&\vdots&\vdots&\vdots&\vdots
 \end{pmatrix}
 $$
@@ -246,7 +246,7 @@ $Q(t)$ is a transition rate matrix:
 \begin{itemize}
 	\item $Q(n)$ is a square matrix.
 	\item $q_{ii}(t)=-\sum_{j\ne i}q_{ij}(t)$ for all $i\in\Omega$
-	\item $p_{ij}(n)\geq 0$ for all $i\ne j\in\Omega$
+	\item $q_{ij}(n)\geq 0$ for all $i\ne j\in\Omega$
 \end{itemize}
 }
 
@@ -292,10 +292,10 @@ $$\pi Q=0$$
 
 \frame{\frametitle{Weather Example}
 $$\pi Q=0\Rightarrow\begin{cases}
--3\pi_1+\pi_2+0\pi_3+2\pi_4=0\\
-1\pi_1-5\pi_2+4\pi_3+0\pi_4=0\\
-1\pi_1+3\pi_2-4\pi_3+0\pi_4=0\\
-0\pi_1+0\pi_2+\pi_3-\pi_4=0\\
+-3\pi_1+1\pi_2+1\pi_3+0\pi_4=0\\
+1\pi_1-5\pi_2+3\pi_3+0\pi_4=0\\
+0\pi_1+4\pi_2-4\pi_3+1\pi_4=0\\
+2\pi_1+0\pi_2+0\pi_3-\pi_4=0\\
 \end{cases}$$
 Solving this gives:
 $$\begin{cases}
